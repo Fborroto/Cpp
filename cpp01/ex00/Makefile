@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/28 15:37:25 by fborroto          #+#    #+#              #
-#    Updated: 2023/12/02 17:15:59 by fborroto         ###   ########.fr        #
+#    Created: 2023/12/02 16:59:50 by fborroto          #+#    #+#              #
+#    Updated: 2023/12/02 17:18:22 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  Phonebook
+NAME =  Zombie
 
 SRC =   *.cpp
 
