@@ -6,11 +6,11 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 16:59:50 by fborroto          #+#    #+#              #
-#    Updated: 2024/04/11 16:56:04 by fborroto         ###   ########.fr        #
+#    Updated: 2024/04/11 18:23:59 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= zombie
+NAME 		= zombieHorde
 
 CC			= c++ -std=c++98
 FLAGS		= -Wall -Wextra -Werror
@@ -18,7 +18,7 @@ RM			= rm -rf
 
 OBJDIR      = .objFiles
 
-FILES		= main newZombie Zombie randomChump 
+FILES		= main Zombie zombieHorde
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))

@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:57:44 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/11 18:04:07 by fborroto         ###   ########.fr       */
+/*   Created: 2024/04/13 01:36:09 by fborroto          #+#    #+#             */
+/*   Updated: 2024/04/13 01:45:31 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main(void)
+# include <iostream>
+# include <string>
+
+class Weapon
 {
-    Zombie *lello = newZombie("lello");
-    lello->announce();
-    randomChump("angelo");
-    delete lello;
-}
+    private:
+        std::string type;
+    public:
+        const std::string & getType( void );
+        void setType(std::string newString);
+    
+};
+
+#endif

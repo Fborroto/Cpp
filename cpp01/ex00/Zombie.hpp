@@ -6,23 +6,26 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:00:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/12/02 17:18:56 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:02:32 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-# include  <iostream>
-# include  <stdlib.h>
+# include <string>
+# include <iostream>
 
-class Zombie
-{
-    private:
-    std::string name;
-    public:
-    void announce(void);
-    ~Zombie();
+class Zombie{
+    private :
+        std::string name;
+    public :
+         Zombie(std::string);
+        ~Zombie();
+        void announce(void);
 };
+
+void randomChump( std::string name );
+Zombie* newZombie( std::string name );
 
 #endif

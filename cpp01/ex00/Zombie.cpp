@@ -6,21 +6,23 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:58:27 by fborroto          #+#    #+#             */
-/*   Updated: 2023/12/02 16:43:37 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:46:56 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void Zombie::announce(void)
+Zombie::Zombie(std::string name)
 {
-    std::cout << this.name + " BraiiiiiiinnnzzzZ...";
+    this->name = name;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << this.name;
+    
 }
 
-
-
+void Zombie::announce(void)
+{
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+}
