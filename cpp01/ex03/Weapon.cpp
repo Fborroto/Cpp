@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 01:36:09 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/15 02:52:25 by fborroto         ###   ########.fr       */
+/*   Created: 2024/04/14 19:41:48 by fborroto          #+#    #+#             */
+/*   Updated: 2024/04/15 02:42:54 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "Weapon.hpp"
 
-# include <iostream>
-# include <string>
-
-class Weapon
+const std::string& Weapon::getType( void )
 {
-    private:
-        std::string type;
-    public:
-        Weapon( std::string type);
-        ~Weapon();
-        
-        const std::string & getType( void );
-        void setType(std::string newString);
-    
-};
+    return this->type;
+}
 
-#endif
+
+void Weapon::setType(std::string newString)
+{
+    this->type = newString;
+}
