@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 22:12:11 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/28 04:17:45 by fborroto         ###   ########.fr       */
+/*   Created: 2024/04/27 22:50:55 by fborroto          #+#    #+#             */
+/*   Updated: 2024/04/28 05:26:42 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
-# include <string>
 
-class Harl
+class Fixed
 {
   private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
+	int value;
+	static const int bits = 8;
 
   public:
-	Harl();
-	~Harl();
-	void complain(std::string level);
+	Fixed();
+	Fixed(const int &v);
+	Fixed(const float &v);
+	Fixed(const Fixed &fixed);
+	const Fixed &operator=(const Fixed &fixed);
+	~Fixed();
+
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+
+	int toInt(void) const;
+	float toFloat(void) const;
 };
-
-typedef void (Harl::*t_func)(void);
-
+    std::ostream & operator<<( std::ostream & o, Fixed const & in );
 #endif

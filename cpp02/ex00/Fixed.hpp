@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 22:05:29 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/28 04:18:56 by fborroto         ###   ########.fr       */
+/*   Created: 2024/04/27 22:50:55 by fborroto          #+#    #+#             */
+/*   Updated: 2024/04/28 04:18:25 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int	main(void)
+# include <iostream>
+
+class Fixed
 {
-	std::string input;
-	Harl harl;
+  private:
+	int value;
+	static const int bits = 8;
 
-	while (true)
-	{
-		std::cout << "Enter a valid input: ";
-		std::cin >> input;
-		harl.complain(input);
-		if (input.compare("exit") == 0)
-			break ;
-	}
+  public:
+	Fixed();
+	Fixed(const Fixed &fixed);
+	const Fixed &operator=(const Fixed &fixed);
+	~Fixed();
 
-	return (0);
-}
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+};
+
+#endif
