@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 23:17:23 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/29 03:04:54 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/04/29 05:11:16 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "(ScavTrap) Deconstructor Call for : " << name << std::endl;
+	std::cout << "(ScavTrap) Destructor  Call for : " << name << std::endl;
 	return ;
 }
 ScavTrap::ScavTrap(const ScavTrap &scavTrap) :  ClapTrap(scavTrap.name)

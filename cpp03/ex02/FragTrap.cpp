@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:15:50 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/29 03:04:41 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/04/29 05:11:16 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "(FragTrap) Deconstructor Call for : " << name << std::endl;
+	std::cout << "(FragTrap) Destructor  Call for : " << name << std::endl;
 	return ;
 }
 FragTrap::FragTrap(const FragTrap &fragTrap) :  ClapTrap(fragTrap.name)

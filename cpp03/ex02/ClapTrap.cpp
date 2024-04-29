@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:04:57 by fborroto          #+#    #+#             */
-/*   Updated: 2024/04/29 00:08:46 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/04/29 05:10:36 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(100), energyPoints(
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "(ClapTrap) Deconstructor Call for : " << name << std::endl;
+    std::cout << "(ClapTrap) Destructor  Call for : " << name << std::endl;
     return;
 }
 ClapTrap::ClapTrap(const ClapTrap &clapTrap)
