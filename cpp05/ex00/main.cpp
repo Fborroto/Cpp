@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 22:37:48 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/10 02:54:33 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/07/10 21:36:39 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ int main ()
         std::cerr << e.what() << std::endl;
     }
     
-    //fattelo da solo.
 }
