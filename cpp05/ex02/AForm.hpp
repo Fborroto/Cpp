@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 21:38:17 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/10 21:38:25 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/07/14 00:30:03 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
         int const gradeExec;
     public:
     AForm(std::string name, int const gradeSign, int const gradeExec);
-    ~AForm();
+    virtual ~AForm();
     AForm(AForm const &AForm);
     AForm &operator=(AForm const &AForm);
     std::string getName() const;
@@ -52,6 +52,7 @@ class AForm
             }            
         };
     void beSigned(Bureaucrat &bureaucrat);
+    virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream & output, AForm const &AForm);
