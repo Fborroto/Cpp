@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 00:10:31 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/16 00:54:08 by fborroto         ###   ########.fr       */
+/*   Created: 2024/07/14 00:10:42 by fborroto          #+#    #+#             */
+/*   Updated: 2024/07/15 22:30:42 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
-#include "Bureaucrat.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
+#include "AForm.hpp"
+#include <fstream>
+#include <string>
 
 
-class PresidentialPardonForm : public AForm
+class ShrubberyCreationForm : public AForm
 {
     private:
         std::string target;
 
             
     public:
-        PresidentialPardonForm(std::string target);
-        PresidentialPardonForm(PresidentialPardonForm const &presidentialPardonForm);
-        PresidentialPardonForm &operator=(PresidentialPardonForm const &presidentialPardonForm);
-        ~PresidentialPardonForm();
+        ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(ShrubberyCreationForm const &ShrubberyCreationForm);
+        ShrubberyCreationForm &operator=(ShrubberyCreationForm const &ShrubberyCreationForm);
+        virtual ~ShrubberyCreationForm();
 
         void execute(Bureaucrat const &executor) const;
 };

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ShrubberyCreationForm.hpp                         :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 00:10:42 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/14 20:16:04 by fborroto         ###   ########.fr       */
+/*   Created: 2024/07/14 00:10:31 by fborroto          #+#    #+#             */
+/*   Updated: 2024/07/16 00:54:08 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-#define SHRUBERRYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 #include "Bureaucrat.hpp"
 
 
-class ShrubberyCreatingForm : public AForm
+class PresidentialPardonForm : public AForm
 {
     private:
         std::string target;
 
             
     public:
-        ShrubberyCreatingForm(std::string target);
-        ShrubberyCreatingForm(ShrubberyCreatingForm const &shrubberyCreatingForm);
-        ShrubberyCreatingForm &operator=(ShrubberyCreatingForm const &shrubberyCreatingForm);
-        ~ShrubberyCreatingForm();
+        PresidentialPardonForm(std::string target);
+        PresidentialPardonForm(PresidentialPardonForm const &presidentialPardonForm);
+        PresidentialPardonForm &operator=(PresidentialPardonForm const &presidentialPardonForm);
+        ~PresidentialPardonForm();
 
-        void execute(Bureaucrat &executor) const;
+        void execute(Bureaucrat const &executor) const;
 };
 
 #endif
