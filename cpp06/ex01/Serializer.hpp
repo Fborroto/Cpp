@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:41:44 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/28 06:27:14 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:48:25 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ class Serializer
 {
 	private:
 		Serializer();
+        Serializer(Serializer const & serialize);
+        Serializer &operator=(Serializer const & serialize);
 
 	public:
+		~Serializer();
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);
 };

@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:41:24 by fborroto          #+#    #+#             */
-/*   Updated: 2024/07/28 06:14:08 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:33:59 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class ScalarConverter
 {
     private:
         ScalarConverter();
+        ScalarConverter(ScalarConverter const & scalar);
+        ScalarConverter &operator=(ScalarConverter const & scalar);
     public:
+        ~ScalarConverter();
         static void scalarConvert(std::string input);
 };
 
