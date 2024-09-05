@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:41:24 by fborroto          #+#    #+#             */
-/*   Updated: 2024/08/31 07:54:00 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:48:08 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ template <typename T> class MutantStack : public std::stack<T>
 		return (*this);
 	};
 	typedef typename std::stack<T>::container_type::iterator iterator;
-	iterator begin(void)
+
+	iterator MutantStack::begin(void)
 	{
 		return (this->c.begin());
 	}
-	iterator end(void)
+	
+	iterator MutantStack::end(void)
 	{
 		return (this->c.end());
 	}

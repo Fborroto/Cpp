@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:41:24 by fborroto          #+#    #+#             */
-/*   Updated: 2024/08/29 18:54:56 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:03:09 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ bool easyfind(T &container, int toFind)
     }
     else    
         return false;
+    
 }
 #endif

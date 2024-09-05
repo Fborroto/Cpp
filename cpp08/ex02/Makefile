@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 16:59:50 by fborroto          #+#    #+#              #
-#    Updated: 2024/08/31 07:54:36 by fborroto         ###   ########.fr        #
+#    Updated: 2024/09/05 17:46:24 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM			= rm -rf
 
 OBJDIR      = .objFiles
 
-FILES		= main 
+FILES		= main MutantStack
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
