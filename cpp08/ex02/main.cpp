@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 05:01:57 by fborroto          #+#    #+#             */
-/*   Updated: 2024/09/05 17:41:36 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:25:04 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(void)
 {
+	
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -35,5 +36,6 @@ int	main(void)
 		++it;
 	}
 	std::stack<int> s(mstack);
+
 	return 0;
 }

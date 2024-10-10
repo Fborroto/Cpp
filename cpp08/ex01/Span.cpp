@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:30:32 by fborroto          #+#    #+#             */
-/*   Updated: 2024/09/27 15:02:01 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:18:02 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,11 @@ void Span::addNumber(int newNumber)
 	this->vector.push_back(newNumber);
 }
 
-void Span::iterAddNumber(unsigned int quantity)
+void Span::iterAddNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	srand(time(NULL));
-	try
-	{
-		for (unsigned int i = 0; i < quantity; i += 1)
-			this->addNumber(rand());
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+    if (std::distance(begin, end) + vector.size() > N)
+        throw Span::OverflowException();
+    vector.insert(vector.end(), begin, end);
 }
 
 int Span::longestSpan()
@@ -68,26 +61,20 @@ int Span::longestSpan()
 int Span::shortestSpan()
 {
 	int	min;
+	int	distance;
 
 	if (vector.size() < 2)
 		throw Span::UnfilledException();
 	min = INT_MAX;
-
-	
-	for (size_t i = 0; i < vector.size(); ++i)
+	std::vector<int> temp = vector;
+	std::sort(temp.begin(), temp.end());
+	for (size_t i = 1; i < temp.size(); ++i)
 	{
-		for (size_t j = i + 1; j < vector.size(); ++j)
-		{
-			distance = std::abs(vector[i] - vector[j]);
-			if (distance < min)
-			{
-				min = distance;
-			}
-		}
+		distance = temp[i] - temp[i - 1];
+		min = std::min(min, distance);
 	}
 	return (min);
 }
-
 
 void Span::print()
 {
