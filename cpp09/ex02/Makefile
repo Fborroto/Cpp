@@ -6,11 +6,11 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 16:59:50 by fborroto          #+#    #+#              #
-#    Updated: 2024/08/31 07:54:36 by fborroto         ###   ########.fr        #
+#    Updated: 2024/11/13 02:13:11 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= MutantStack
+NAME 		= PmergeMe
 
 CC			= c++ -std=c++98
 FLAGS		= -Wall -Wextra -Werror
@@ -18,11 +18,11 @@ RM			= rm -rf
 
 OBJDIR      = .objFiles
 
-FILES		= main 
+FILES		= main  PmergeMe
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= MutantStack.hpp
+HEADER		= PmergeMe.hpp
 
 NONE="\033[0m"
 GREEN="\033[32m"
@@ -49,6 +49,9 @@ compile_and_run: re
 
 run:
 	@./$(NAME)
+
+numbers:
+	@./$(NAME) `shuf -i 1-100000 -n 5 | tr "\n" " "`
 
 leaks:
 	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)

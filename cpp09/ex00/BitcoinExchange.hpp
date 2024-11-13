@@ -11,40 +11,63 @@
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 
-#include <iostream>
-#include <map>
-#include <exception>
-#include <algorithm>
-#include <climits>
-#include <string>
-#include <cstdlib>
-#include <iomanip> 
-
+# include <algorithm>
+# include <climits>
+# include <cstdlib>
+# include <exception>
+# include <fstream>
+# include <iomanip>
+# include <iostream>
+# include <map>
+# include <string>
+# include <sstream>
 
 class BitcoinExchange
 {
   private:
-        std::map<std::string, float> database;
+	std::map<std::string, float> database;
 
-  public:  
-        BitcoinExchange();
-        ~BitcoinExchange();
-        BitcoinExchange(const BitcoinExchange &src);
-        BitcoinExchange &operator=(const BitcoinExchange &src);
+  public:
+	BitcoinExchange();
+	~BitcoinExchange();
+	BitcoinExchange(const BitcoinExchange &src);
+	BitcoinExchange &operator=(const BitcoinExchange &src);
 
-        void exchange(std::string file);
+	void exchangeBitcoin(std::string file);
 
-        class UnfilledException : public std::exception {
-          public:
-                char const* what()   const throw(){ return ("Not enough numbers in the container");}             
-        };
-        class OverflowException : public std::exception {
-            public:
-            char const* what() const throw(){ return ("exceeded max size of elements");}
-        };
-                  
+	void extractData();
+	bool isLeapYear(int year);
+	bool isValidDate(int year, int month, int day);
+	void checkDate(const std::string &date);
+	void checkValue(float value);
+	float getDateValue(const std::string& date) const;
+	class BadInput : public std::exception
+	{
+		public:
+		char const *what() const throw()
+		{
+			return ("Error: bad input => ");
+		}
+	};
+	class InvalidNumberNegative : public std::exception
+	{
+		public:
+		virtual const char *what() const throw()
+		{
+			return ("Error: not a positive number.");
+		}
+	};
+
+	class InvalidNumberBig : public std::exception
+	{
+		public:
+		virtual const char *what() const throw()
+		{
+			return ("Error: too large number.");
+		}
+	};
 };
 
 #endif

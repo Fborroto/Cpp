@@ -1,43 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:41:24 by fborroto          #+#    #+#             */
-/*   Updated: 2024/08/31 07:54:00 by fborroto         ###   ########.fr       */
+/*   Updated: 2024/11/11 23:57:43 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUTANTSTACK_HPP
-# define MUTANTSTACK_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
+#include <iostream>
+#include <stack>
+#include <sstream>
+#include <string>
+#include <stdexcept>
+
+
+# include <cstdlib>
+# include <exception>
+# include <fstream>
+# include <iomanip>
 # include <iostream>
-# include <stack>
 
-template <typename T> class MutantStack : public std::stack<T>
+class RPN
 {
   private:
+
   public:
-	MutantStack() : std::stack<T>(){};
-	~MutantStack(){};
-	MutantStack(const MutantStack &src) : std::stack<T>(src){};
-	MutantStack &operator=(const MutantStack &src)
+	RPN();
+	~RPN();
+	RPN(const RPN &src);
+	RPN &operator=(const RPN &src);
+
+    long long evaluateRPN(const std::string& expression);
+    bool isNumber(const std::string& token);
+    int stringToInt(const std::string& str);
+	class BadInput : public std::exception
 	{
-		if (this != &src)
-			std::stack<T>::operator=(src);
-		return (*this);
+		public:
+		char const *what() const throw()
+		{
+			return ("Error: bad input");
+		}
 	};
-	typedef typename std::stack<T>::container_type::iterator iterator;
-	iterator begin(void)
-	{
-		return (this->c.begin());
-	}
-	iterator end(void)
-	{
-		return (this->c.end());
-	}
+
 };
 
 #endif
+
+
+
