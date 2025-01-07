@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 16:59:50 by fborroto          #+#    #+#              #
-#    Updated: 2024/11/13 02:13:11 by fborroto         ###   ########.fr        #
+#    Updated: 2025/01/06 15:32:26 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ run:
 	@./$(NAME)
 
 numbers:
-	@./$(NAME) `shuf -i 1-100000 -n 5 | tr "\n" " "`
+	@./$(NAME) `shuf -i 1-1000 -n 1000 | tr "\n" " "` > outfile.txt
 
 leaks:
 	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
